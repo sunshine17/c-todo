@@ -1,0 +1,8 @@
+<ion-view title="Finished Items" id="page3">
+  <ion-content padding="true" class=" manual-remove-top-padding has-header">
+    <ion-list id="finishedItems-list2" class="manual-list-fullwidth">
+      <ion-item class="item-icon-left" id="finishedItems-list-item2" ui-sref="tabsController.todoItem({&quot;item&quot;:&quot;&quot;+item.$id+&quot;&quot;})" ng-repeat="item in items" ng-show="item.finished">
+        <i class="icon ion-android-checkbox"></i>{{item.title}}</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

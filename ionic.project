@@ -1,0 +1,12 @@
+{
+  "name": "c-todo",
+  "app_id": "51484d07",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}
