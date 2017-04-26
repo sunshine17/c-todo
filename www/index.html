@@ -53,30 +53,38 @@
     <script src="js/controllers.js"></script>
     <script src="js/routes.js"></script>
     
-     
     <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
      
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
      
     <script src="js/directives.js"></script>
-     
     <script src="js/services.js"></script>
-     
     <script src="js/storage.js"></script>
-     
-    <script src="js/ngcordova-wrapper-nativestorage.min.js"></script>
-     
-    <script src="js/todos.js"></script>
-     
-    <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
-    
 
-    
+    <script src="js/todos.js"></script>
+    <script src="lib/lodash/dist/lodash.min.js"></script>
+
+    <script src="lib/ngcordova-wrapper-nativestorage/dist/ngcordova-wrapper-nativestorage.min.js"></script>
+
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
-    
 
   </head>
-  <body ng-app="app" animation="slide-left-right-ios7">
+  <body  animation="slide-left-right-ios7">
+  <script>
+    angular.element(document).ready(function () {
+        if (window.cordova) {
+            console.log("Running in Cordova, will bootstrap AngularJS once 'deviceready' event fires.");
+            document.addEventListener('deviceready', function () {
+                console.log("Deviceready event has fired, bootstrapping AngularJS.");
+                angular.bootstrap(document.body, ['app']);
+            }, false);
+        } else {
+            console.log("Running in browser, bootstrapping AngularJS now.");
+            angular.bootstrap(document.body, ['app']);
+        }
+    });
+  </script>
+
   <div>
   <div>
     <ion-nav-bar class="bar-royal">
